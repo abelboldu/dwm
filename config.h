@@ -21,9 +21,9 @@ static const char *tags[] = { "term", "www", "im", "4", "5", "6", "7", "8", "9" 
 static const Rule rules[] = {
 	/* class                  instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",                 NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",              NULL,       NULL,       1 << 2,       False,       -1 },
-	{ "chromium-browser",     NULL,       NULL,       1 << 2,       False,       -1 },
-	{ "Pidgin",               NULL,       NULL,       0,            True,        -1 },
+	{ "Firefox",              NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "chromium-browser",     NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "Pidgin",               NULL,       NULL,       0 << 2,       True,        -1 },
 };
 
 /* layout(s) */
@@ -57,7 +57,7 @@ static const char *termcmd[]  = { "urxvt", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
